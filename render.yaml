@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: render-env-test-staging
+    env: static
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: true
+    branch: master
+    headers:
+      - path: /*
+        name: X-Test
+        value: staging x-test
+
+  - type: web
+    name: render-env-test-prod
+    env: static
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    branch: prod
+    headers:
+      - path: /*
+        name: X-Test
+        value: production x-test
+    envVars:
+      - key: TEST_1
+        value: I've changed
