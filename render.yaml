@@ -1,7 +1,7 @@
 services:
   - type: web
     name: render-env-test-staging
-    env: static
+    env: staging
     staticPublishPath: .
     pullRequestPreviewsEnabled: true
     branch: master
@@ -15,7 +15,7 @@ services:
     env: static
     staticPublishPath: .
     pullRequestPreviewsEnabled: false
-    branch: prod
+    branch: main
     headers:
       - path: /*
         name: X-Test
