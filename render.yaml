@@ -4,7 +4,7 @@ services:
     env: static
     staticPublishPath: .
     pullRequestPreviewsEnabled: true
-    branch: master
+    branch: staging
     headers:
       - path: /*
         name: X-Test
@@ -15,7 +15,7 @@ services:
     env: static
     staticPublishPath: .
     pullRequestPreviewsEnabled: false
-    branch: prod
+    branch: main
     headers:
       - path: /*
         name: X-Test
