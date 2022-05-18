@@ -9,6 +9,9 @@ services:
       - path: /*
         name: X-Test
         value: staging x-test
+    envVars:
+      - key: TEST_1
+        value: I'm special
 
   - type: web
     name: render-env-test-prod
