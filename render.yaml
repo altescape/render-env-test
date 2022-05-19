@@ -7,17 +7,17 @@ services:
     pullRequestPreviewsEnabled: true
     branch: staging
     envVars:
-    - key: X_FOO
-      value: generic x-foo 2
-    - key: X_BAR
-      value: staging x-bar-01
+      - key: X_FOO
+        value: generic x-foo
+      - key: X_BAR
+        value: staging x-bar-0
 
   - <<: *BASE_CONFIG
     name: render-env-test-prod
     pullRequestPreviewsEnabled: false
     branch: main
     envVars:
-    - key: X_FOO
-      value: generic x-foo 2
-    - key: X_BAR
-      value: production x-bar-01
+      - key: X_FOO
+        value: generic x-foo
+      - key: X_BAR
+        value: production x-bar-0
