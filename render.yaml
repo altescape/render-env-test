@@ -1,4 +1,8 @@
 services:
+  &ENV:
+    ENV:
+      - name: "ENV"
+        value: "dev"
   - &BASE_CONFIG
     type: web
     name: render-env-test-staging
@@ -7,6 +11,7 @@ services:
     pullRequestPreviewsEnabled: true
     branch: staging
     envVars:
+      - <<: *ENV
       - key: X_FOO
         value: generic x-foo
       - key: X_BAR
