@@ -1,3 +1,4 @@
+---
 - &ENVVAR_1 { key: X_FOO, value: generic x-foo }
 
 services:
