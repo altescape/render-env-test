@@ -1,4 +1,4 @@
-ENVVAR_1: &ENVVAR_1
+base: &base
   key: X_FOO
   value: generic x-foo
 
@@ -11,7 +11,7 @@ services:
     pullRequestPreviewsEnabled: true
     branch: staging
     envVars:
-      - <<: *ENVVAR_1
+      - <<: *base
       - key: X_BAR
         value: staging x-bar-0
 
@@ -20,6 +20,6 @@ services:
     pullRequestPreviewsEnabled: false
     branch: main
     envVars:
-      - <<: *ENVVAR_1
+      - <<: *base
       - key: X_BAR
         value: production x-bar-0
