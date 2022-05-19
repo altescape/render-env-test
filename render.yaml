@@ -1,6 +1,5 @@
 services:
-  - &ENVVAR_1 { key: X_FOO, value: generic x-foo }
-  - &base-config
+  - &BASE_CONFIG
     type: web
     name: render-env-test-staging
     env: static
@@ -8,15 +7,13 @@ services:
     pullRequestPreviewsEnabled: true
     branch: staging
     envVars:
-      - <<: *ENVVAR_1
       - key: X_BAR
         value: staging x-bar-0
 
-  - <<: *base-config
+  - <<: *BASE_CONFIG
     name: render-env-test-prod
     pullRequestPreviewsEnabled: false
     branch: main
     envVars:
-      - <<: *ENVVAR_1
       - key: X_BAR
         value: production x-bar-0
