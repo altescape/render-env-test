@@ -8,10 +8,10 @@ services:
     headers:
       - path: /*
         name: X-Test
-        value: staging x-test-2
+        value: staging x-test-3
     envVars:
       - key: TEST_1
-        value: I'm special test 2
+        value: I'm special test 3
 
   - type: web
     name: render-env-test-prod
@@ -25,4 +25,4 @@ services:
         value: production x-test
     envVars:
       - key: TEST_1
-        value: I've changed
+        value: I've changed test 2
