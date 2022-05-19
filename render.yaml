@@ -1,3 +1,7 @@
+envVar1: &envVar1
+  key: X_FOO
+  value: generic x-foo
+
 services:
   - &base-config
     type: web
@@ -6,18 +10,16 @@ services:
     staticPublishPath: .
     pullRequestPreviewsEnabled: true
     branch: staging
-    - &base-envvars
-      envVars:
-        - key: X_FOO
-          value: generic x-foo
-        - key: X_BAR
-          value: staging x-bar-0
+    envVars:
+      <<: *envVar1
+      - key: X_BAR
+        value: staging x-bar-0
 
   - <<: *base-config
     name: render-env-test-prod
     pullRequestPreviewsEnabled: false
     branch: main
-    - <<: *base-envvars
-      envVars:
-        - key: X_BAR
-          value: production x-bar-0
+    envVars:
+      <<: *envVar1
+      - key: X_BAR
+        value: production x-bar-0
