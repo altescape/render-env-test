@@ -1,8 +1,8 @@
-base: &base
-  key: X_FOO
-  value: generic x-foo
 
 services:
+  ENVVAR_1: &ENVVAR_1
+    key: X_FOO
+    value: generic x-foo
   - &base-config
     type: web
     name: render-env-test-staging
@@ -11,7 +11,7 @@ services:
     pullRequestPreviewsEnabled: true
     branch: staging
     envVars:
-      - <<: *base
+      - <<: *ENVVAR_1
       - key: X_BAR
         value: staging x-bar-0
 
@@ -20,6 +20,6 @@ services:
     pullRequestPreviewsEnabled: false
     branch: main
     envVars:
-      - <<: *base
+      - <<: *ENVVAR_1
       - key: X_BAR
         value: production x-bar-0
