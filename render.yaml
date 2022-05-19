@@ -8,9 +8,9 @@ services:
     branch: staging
     envVars:
     - key: X_FOO
-      value: generic x-foo
+      value: generic x-foo 2
     - key: X_BAR
-      value: staging x-bar-0
+      value: staging x-bar-01
 
   - <<: *BASE_CONFIG
     name: render-env-test-prod
@@ -18,6 +18,6 @@ services:
     branch: main
     envVars:
     - key: X_FOO
-      value: generic x-foo
+      value: generic x-foo 2
     - key: X_BAR
-      value: production x-bar-0
+      value: production x-bar-01
