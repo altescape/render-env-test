@@ -1,28 +1,21 @@
 services:
-  - type: web
+  - &base-config
+    type: web
     name: render-env-test-staging
     env: static
     staticPublishPath: .
     pullRequestPreviewsEnabled: true
     branch: staging
-    headers:
-      - path: /*
-        name: X-Test
-        value: staging x-test-2
     envVars:
-      - key: TEST_1
-        value: I'm special test 2
+      - key: X_FOO
+        value: generic x-foo
+      - key: X_BAR
+        value: staging x-bar-0
 
-  - type: web
+  - <<: *base-config
     name: render-env-test-prod
-    env: static
-    staticPublishPath: .
     pullRequestPreviewsEnabled: false
     branch: main
-    headers:
-      - path: /*
-        name: X-Test
-        value: production x-test
     envVars:
-      - key: TEST_1
-        value: I've changed
+      - key: X_BAR
+        value: production x-bar-0
