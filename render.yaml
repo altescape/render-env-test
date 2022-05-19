@@ -1,5 +1,6 @@
 services:
-  - type: web
+  - &base-config
+    type: web
     name: render-env-test-staging
     env: static
     staticPublishPath: .
@@ -7,22 +8,23 @@ services:
     branch: staging
     headers:
       - path: /*
+        key: X-Render-Env
+        value: generic
+      - path: /*
         name: X-Test
         value: staging x-test-3
     envVars:
       - key: TEST_1
-        value: I'm special test 3
+        value: staging test 1
 
-  - type: web
+  - <<: *base-config
     name: render-env-test-prod
-    env: static
-    staticPublishPath: .
     pullRequestPreviewsEnabled: false
     branch: main
     headers:
       - path: /*
         name: X-Test
-        value: production x-test
+        value: production x-test-1
     envVars:
       - key: TEST_1
-        value: I've changed test 2
+        value: production test 1
