@@ -1,8 +1,8 @@
 
 services:
-  ENVVAR_1: &ENVVAR_1
-    key: X_FOO
-    value: generic x-foo
+  - ENVVAR_1: &ENVVAR_1
+      key: X_FOO
+      value: generic x-foo
   - &base-config
     type: web
     name: render-env-test-staging
