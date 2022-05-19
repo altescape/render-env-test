@@ -1,4 +1,3 @@
-
 services:
   - ENVVAR_1: &ENVVAR_1
       key: X_FOO
