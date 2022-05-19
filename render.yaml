@@ -12,10 +12,7 @@ services:
         value: generic
       - path: /*
         name: X-Test
-        value: staging x-test-3
-    envVars:
-      - key: TEST_1
-        value: staging test 1
+        value: staging x-test-0
 
   - <<: *base-config
     name: render-env-test-prod
@@ -24,7 +21,4 @@ services:
     headers:
       - path: /*
         name: X-Test
-        value: production x-test-1
-    envVars:
-      - key: TEST_1
-        value: production test 1
+        value: production x-test-0
