@@ -6,18 +6,22 @@ services:
     staticPublishPath: .
     pullRequestPreviewsEnabled: true
     branch: staging
-    envVars:
-      - key: X_FOO
-        value: generic x-foo
-      - key: X_BAR
-        value: staging x-bar-0
+    headers:
+      - path: /*
+        name: X-Foo
+        value: staging
+      - path: /*
+        name: X-Bar
+        value: staging
 
   - <<: *BASE_CONFIG
     name: render-env-test-prod
     pullRequestPreviewsEnabled: false
     branch: main
-    envVars:
-      - key: X_FOO
-        value: generic x-foo
-      - key: X_BAR
-        value: production x-bar-0
+    headers:
+      - path: /*
+        name: X-Foo
+        value: production
+      - path: /*
+        name: X-Bar
+        value: production
