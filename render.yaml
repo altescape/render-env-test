@@ -1,6 +1,6 @@
 services:
   type: web
-  name: render-env-test
+  name: render-env-test-staging
   env: static
   staticPublishPath: .
   pullRequestPreviewsEnabled: true
@@ -12,3 +12,15 @@ services:
     - path: /*
       name: X-Bar
       value: staging
+
+  - <<: *BASE_CONFIG
+    name: render-env-test-prod
+    pullRequestPreviewsEnabled: false
+    branch: main
+    headers:
+      - path: /*
+        name: X-Foo
+        value: production
+      - path: /*
+        name: X-Bar
+        value: production
