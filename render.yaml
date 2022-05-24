@@ -9,10 +9,10 @@ services:
     headers:
       - path: /*
         name: X-Foo
-        value: staging-2
+        value: staging
       - path: /*
         name: X-Bar
-        value: staging-2
+        value: staging
 
   - <<: *BASE_CONFIG
     name: render-env-test-prod
@@ -21,7 +21,7 @@ services:
     headers:
       - path: /*
         name: X-Foo
-        value: production-2
+        value: production
       - path: /*
         name: X-Bar
-        value: production-2
+        value: production
