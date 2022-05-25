@@ -7,7 +7,7 @@ services:
     headers:
       - path: /*
         name: X-Foo
-        value: staging
+        value: staging-2
       - path: /*
         name: X-Bar
         value: staging
